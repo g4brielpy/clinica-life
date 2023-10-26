@@ -1,0 +1,288 @@
+@charset "UTF-8";
+
+:root {
+  --font-padrao: "Source Sans pro", Sans-serif;
+
+  --Ctexto: #0000008c;
+  --Cdestaque: #00cad1;
+  --Ccontraste: #0d6e71;
+
+  --larguraM: calc(1024px - 1em);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1.5em;
+}
+
+/* reset | geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-padrao);
+}
+
+/* cabeçalho */
+header.cabecalho {
+  background-color: var(--Cdestaque);
+  color: #fff;
+  padding: 0 1em;
+}
+.cabecalho > div {
+  width: 100%;
+  max-width: var(--larguraM);
+  min-height: 60px;
+
+  margin: auto;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  width: 100px;
+  object-fit: cover;
+}
+
+nav.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+nav.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 505;
+}
+:is(nav.menu, nav.nav-especialistas) a:hover {
+  color: var(--Ccontraste);
+  transition: 1s;
+}
+
+/* banner */
+div.banner {
+  color: #fff;
+  background: url("../assets/recepcao.png") no-repeat center center;
+  background-size: cover;
+
+  height: 60vh;
+  min-height: 200px;
+  max-height: 600px;
+  padding: 1em;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container-titulo {
+  width: 100%;
+  max-width: var(--larguraM);
+  margin: auto;
+}
+
+/* conteúdo principal */
+main:first-of-type {
+  width: 100%;
+  max-width: var(--larguraM);
+
+  margin: auto;
+  text-align: center;
+}
+
+main :where(p, h2, h3, li, figcaption) {
+  color: var(--Ctexto);
+}
+main :where(h2, h3, figcaption) {
+  margin: 0.8em 0;
+}
+main :where(p, li) {
+  margin: 0.5em 0;
+}
+
+/* box conteudo de cada seção */
+div.container-conteudo {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* lista de descrição da clínica */
+div.container-discricao-sobre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul.lista-descricao {
+  list-style-position: inside;
+  text-align: left;
+  padding-left: 1em;
+}
+
+p.titulo-discricao {
+  font-size: 1.2em;
+  font-weight: 500;
+
+  margin-bottom: 0.9em;
+}
+
+/* container cards */
+div.container-cards {
+  width: 100%;
+  max-width: var(--larguraM);
+  margin: 2em 0 2.5em;
+  padding: 0 1em;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5em 2em;
+}
+.card {
+  flex: 1 1 250px;
+
+  border-radius: 4px;
+
+  box-shadow: 6px 6px 12px #d5d5d5ad, -6px -6px 17px #ebebeb;
+}
+.card img {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+}
+
+/* link ver horários */
+button.bt-destaque a {
+  color: #fff;
+  text-decoration: none;
+}
+button.bt-destaque {
+  position: relative;
+  z-index: 1;
+
+  background-color: var(--Cdestaque);
+  background-repeat: no-repeat;
+
+  box-shadow: var(--Ccontraste) 0px 3px 0px 0px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: none;
+
+  width: 165px;
+  height: 49px;
+  padding: 15px;
+
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+.bt-destaque::before {
+  content: "";
+  background-color: var(--Ccontraste);
+
+  width: 0;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  transition: width 700ms ease-in-out;
+  display: inline-block;
+}
+.bt-destaque:hover::before {
+  width: 100%;
+}
+
+/* conteiner mapa */
+.container-mapa {
+  padding: 0 1em;
+  margin-top: 2em;
+}
+
+/* Espaçamento das section */
+.mb-secao {
+  margin-bottom: 6em;
+}
+
+/* rodape */
+footer.rodape {
+  background-color: var(--Ccontraste);
+  color: #fff;
+
+  width: 100%;
+  min-height: 200px;
+  padding: 1em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.logo-rodape img {
+  width: 150px;
+}
+.box-rodape-contato {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1em;
+  padding-bottom: 2em;
+}
+
+/* Medias Queries | breakpoinsts */
+
+@media screen and (max-width: 1024px) {
+  /* laptop */
+  div.banner {
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* tablet */
+  .container-discricao-sobre img[alt="Médico"] {
+    display: none;
+  }
+
+  div.banner {
+    height: 350px;
+  }
+  .container-titulo {
+    font-size: 0.9em;
+  }
+
+  .container-mapa {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  /* mobile */
+  .cabecalho > div {
+    flex-direction: column;
+  }
+
+  nav.menu {
+    border-top: 2px solid #0d6e7163;
+
+    width: 100%;
+    padding: 0.8em;
+
+    justify-content: space-around;
+  }
+
+  div.banner {
+    height: 250px;
+  }
+  .container-titulo {
+    font-size: 0.8em;
+  }
+
+  .container-mapa {
+    display: none;
+  }
+}

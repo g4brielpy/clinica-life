@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+:root {
+  --font-padrao: "Source Sans pro", Sans-serif;
+
+  --Ctexto: #0000008c;
+  --Ctexto-tabela: #585757;
+  --Cdestaque: #00cad1;
+  --Ccontraste: #0d6e71;
+  --Csombra: #f1f1f1;
+
+  --larguraM: calc(1024px - 1em);
+}
+
+/* navegação */
+nav.nav-especialistas {
+  padding: 1.5em 1em 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2em;
+}
+.nav-especialistas a {
+  color: var(--Ctexto);
+  border-bottom: 2px solid var(--Cdestaque);
+
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+/* título da página */
+main h2:first-child {
+  margin: 2em auto;
+}
+
+/* container tabela e imagem | Flex */
+div.container-flow-table {
+  height: 240px;
+  margin: 2em 0;
+  padding: 0 1em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* tabela */
+table.tabela {
+  width: 70%;
+  height: 100%;
+
+  border-collapse: collapse;
+  padding: 1em;
+  text-align: left;
+}
+
+/* efeito zebrado */
+.tabela thead tr:nth-child(odd) {
+  background-color: var(--Cdestaque);
+  color: #fff;
+}
+.tabela tbody tr:nth-child(odd) {
+  background-color: var(--Csombra);
+}
+
+/* células da tabela */
+.tabela th {
+  padding: 10px;
+}
+.tabela td {
+  color: var(--Ctexto-tabela);
+  font-weight: 500;
+  padding: 5px 10px;
+}
+
+/* imagens da tabela */
+.container-flow-table img {
+  width: 30%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Medias Queries | breakpoinsts */
+
+@media screen and (max-width: 768px) {
+  table.tabela {
+    width: 100%;
+  }
+  .container-flow-table img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  div.container-flow-table {
+    padding: 0;
+
+  }
+}
