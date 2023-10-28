@@ -108,6 +108,7 @@ div.container-conteudo {
   width: 100%;
   max-width: 600px;
   margin: auto;
+  padding: 0 1em;
 }
 
 /* lista de descrição da clínica */
