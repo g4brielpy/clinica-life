@@ -98,6 +98,11 @@ table.tabela {
 @media screen and (max-width: 425px) {
   div.container-flow-table {
     padding: 0;
+  }
+}
 
+@media screen and (max-width: 320px) {
+  div.container-flow-table {
+    margin: 4em 0;
   }
 }
